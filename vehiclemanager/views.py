@@ -22,7 +22,7 @@ def edit_vehicle(request, vehicle_id):
         if form.is_valid():
             form.save()
             bform.save()
-            return HttpResponseRedirect('/vehicles')
+            return HttpResponseRedirect('/')
 
     else:
         form = VehicleEditForm(instance=vehicle)
@@ -44,7 +44,7 @@ def add_vehicle(request):
             vehicle = Vehicle.objects.get(id=form.cleaned_data['id'])
             vehicle.add_batteries(form.cleaned_data['batteries'])
 
-            return HttpResponseRedirect('/vehicles')
+            return HttpResponseRedirect('/')
 
     else:
         form = VehicleForm()
@@ -57,4 +57,4 @@ def delete_vehicle(request, vehicle_id):
     batteries = Battery.objects.filter(vehicle=vehicle)
     batteries.delete()
     vehicle.delete()
-    return HttpResponseRedirect('/vehicles')
+    return HttpResponseRedirect('/')

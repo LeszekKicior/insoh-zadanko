@@ -8,6 +8,7 @@
 
             {{ form }}
             {{ bformset.management_form }}
+            {% if bformset.instance.battery_set.count %}
             <h3>Baterie</h3>
             <div class="battery-list rounded-box">
 
@@ -33,6 +34,7 @@
                     <br>
                 {% endfor %}
             </div>
+        {% endif %}
             <div><label>Dodaj baterie:</label>
                 <input type="number" name="addbats" value="0"/>
             </div>
