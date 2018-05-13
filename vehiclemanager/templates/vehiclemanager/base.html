@@ -1,0 +1,10 @@
+{% load static %}
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link rel='stylesheet' href="{% static 'css/app.css' %}">
+<div class="container">
+    <div class="main-content rounded-box">
+        {% block content %}
+        {% endblock %}
+    </div>
+<span class="credits">Leszek Kicior 2018</span>
+</div>

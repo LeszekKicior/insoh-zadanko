@@ -1,0 +1,46 @@
+{% extends "vehiclemanager/base.html" %}
+
+<div class="edit-vehicle">
+    {% block content %}
+        <h1>Edytuj pojazd</h1>
+        <form action={% url 'edit_vehicle' vehicle_id=vehicle.id %} method="post">
+            {% csrf_token %}
+
+            {{ form }}
+            {{ bformset.management_form }}
+            <h3>Baterie</h3>
+            <div class="battery-list rounded-box">
+
+                {% for b in bformset %}
+                    <div class="battery-info">
+                        <h2>{{ b.instance.battery_number }}</h2>
+                        <div>
+                            <div class="label-switch">Aktywna:
+                                <label class="switch">
+                                    {{ b.is_on }}
+                                    <span class="slider round"></span>
+                                </label></div>
+                            <div class="label-switch">Usuń:
+                                <label class="switch">
+                                    {{ b.DELETE }}
+                                    <span class="slider delete round"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        {{ b.vehicle }}{{ b.id }}{# Doesn't show up in form, but needed for it to work #}
+                    </div>
+                    <br>
+                {% endfor %}
+            </div>
+            <div><label>Dodaj baterie:</label>
+                <input type="number" name="addbats" value="0"/>
+            </div>
+            <div style="margin-top:20px;">
+                <button class="button" type="submit">Zapisz</button>
+                <a class="button bt-delete" href={% url 'index' %}>Anuluj</a>
+            </div>
+
+        </form>
+    {% endblock %}
+</div>

@@ -1,0 +1,13 @@
+{% extends 'vehiclemanager/base.html' %}
+
+{% block content %}
+    <h1>Dodaj nowy pojazd</h1>
+    <form action={% url 'add_vehicle' %} method="post">
+        <table class="form-table">
+            {% csrf_token %}
+            {{ form }}</table>
+        <button class="button" type="submit">Zapisz</button>
+        <a class="button bt-delete" href={% url 'index' %}>Anuluj</a>
+    </form>
+
+{% endblock %}

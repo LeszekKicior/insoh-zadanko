@@ -1,0 +1,29 @@
+{% extends 'vehiclemanager/base.html' %}
+
+{% block content %}
+    <a class='button' href={% url 'add_vehicle' %}>Dodaj pojazd</a>
+
+    {% if vehicles %}
+        <div class="vehicle-list">
+
+            {% for vehicle in vehicles %}
+                <div class="vehicle rounded-box">
+                    <div class="vehicle-info"><p>ID:  {{ vehicle.id }}</p>
+                        <h2> {{ vehicle.name }}</h2>
+                        <p><b>Liczba baterii: </b> {{ vehicle.battery_number }}</p>
+                    </div>
+                    <div class="button-container">
+                        <a class="button" href={% url 'edit_vehicle' vehicle_id=vehicle.id %}>Edytuj</a>
+                        <a class="button bt-delete" href={% url 'delete_vehicle' vehicle_id=vehicle.id %}>Usuń</a>
+                    </div>
+                </div>
+            {% endfor %}
+
+
+            {% else %}
+            <div class="info">
+                <p>Nie dodałeś jeszcze żadnych pojazdów!</p>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

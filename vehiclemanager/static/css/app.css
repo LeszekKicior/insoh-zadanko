@@ -1,0 +1,159 @@
+body {
+  margin: 0;
+  font-family: "Montserrat", "Roboto", Verdana, Arial, sans-serif; }
+  body h1 {
+    text-align: center; }
+
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 0 100px;
+  background-color: slategray; }
+
+.main-content {
+  padding: 20px;
+  border-radius: 10px;
+  margin: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: #e6e6e6;
+  max-width: 968px;
+  width: 60%; }
+
+.credits {
+  bottom: 0;
+  font-size: xx-small;
+  position: absolute;
+  right: 10px; }
+
+.vehicle {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #eeeeee;
+  border-radius: 10px; }
+  .vehicle .vehicle-info {
+    width: 70%;
+    overflow: hidden; }
+  .vehicle .button-container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly; }
+    .vehicle .button-container .button {
+      width: 100%;
+      text-align: center; }
+
+.rounded-box {
+  border-radius: 10px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.6); }
+
+.info {
+  font-size: x-large;
+  margin: auto;
+  text-align: center; }
+
+.battery-list {
+  padding: 25px 0 10px 0;
+  margin: 0 auto 15px;
+  width: 50%; }
+  .battery-list .battery-info {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: -10px auto; }
+
+form {
+  text-align: center; }
+  form label {
+    display: block;
+    margin-bottom: 3px;
+    color: #2f2f2f;
+    font-size: smaller; }
+
+input {
+  font-family: "Montserrat", sans-serif;
+  font-size: large;
+  padding: 10px;
+  background-color: whitesmoke;
+  border: none;
+  border-radius: 3px; }
+
+.button {
+  font-family: 'Montserrat', sans-serif;
+  border: none;
+  text-transform: uppercase;
+  font-weight: normal;
+  padding: 9px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  align-self: left;
+  cursor: pointer;
+  font-size: inherit;
+  background-color: #003665; }
+  .button:hover {
+    background-color: #002851; }
+  .button.bt-delete {
+    background-color: #921801; }
+    .button.bt-delete:hover {
+      background-color: #781501; }
+
+.label-switch {
+  align-items: center;
+  margin: 0 20px;
+  display: inline-flex;
+  flex-flow: column nowrap;
+  padding: 5px; }
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin-top: 3px; }
+  .switch input {
+    display: none; }
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s; }
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s; }
+
+input:checked + .slider {
+  background-color: #5d89b7; }
+  input:checked + .slider.delete {
+    background-color: #c34e3e; }
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px); }
+
+.slider.round {
+  border-radius: 34px; }
+
+.slider.round:before {
+  border-radius: 50%; }
+
+/*# sourceMappingURL=app.css.map */
