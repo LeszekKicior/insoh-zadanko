@@ -10,11 +10,6 @@ def index(request):
     return render(request, 'vehiclemanager/vehicle_list.html', {'vehicles': vehicles})
 
 
-# def add_batteries(vehicle, num):
-#     for n in range(num):
-#         Battery.create(vehicle=vehicle)
-
-
 def edit_vehicle(request, vehicle_id):
     BatteryFormSet = inlineformset_factory(Vehicle, Battery, fields=('is_on',), extra=0)
 
@@ -33,19 +28,15 @@ def edit_vehicle(request, vehicle_id):
         form = VehicleEditForm(instance=vehicle)
 
     vehicle = get_object_or_404(Vehicle, id=vehicle_id)
-    # batteries = Battery.objects.filter(vehicle=vehicle)
 
     bformset = BatteryFormSet(instance=vehicle)
 
     return render(request, 'vehiclemanager/edit_vehicle.html',
                   {'vehicle': vehicle, 'form': form.as_p(), 'bformset': bformset})
-    # return render(request, 'vehiclemanager/edit_vehicle.html', {'vehicle': vehicle, 'form': form})
 
 
 def add_vehicle(request):
-    # if this is a POST request we need to process the form data
     if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
         form = VehicleForm(request.POST)
         if form.is_valid():
             form.save()
@@ -67,6 +58,3 @@ def delete_vehicle(request, vehicle_id):
     batteries.delete()
     vehicle.delete()
     return HttpResponseRedirect('/vehicles')
-
-# def edit_batteries(request, vehicle_id):
-#     vehicle = get_object_or_404(Vehicle, id=vehicle_id)

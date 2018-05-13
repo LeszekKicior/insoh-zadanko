@@ -26,11 +26,11 @@ body {
   width: 60%;
 }
 
-.credits{
-    bottom: 0;
-    font-size: xx-small;
-    position: absolute;
-    right: 10px;
+.credits {
+  bottom: 0;
+  font-size: xx-small;
+  position: absolute;
+  right: 10px;
 }
 
 .vehicle {
@@ -119,14 +119,13 @@ input {
     background-color: #002851;
   }
 
-
-&.bt-delete {
-  background-color: #921801;
-  &:hover {
-    background-color: #781501;
+  &.bt-delete {
+    background-color: #921801;
+    &:hover {
+      background-color: #781501;
+    }
   }
-}}
-
+}
 
 .label-switch {
   align-items: center;

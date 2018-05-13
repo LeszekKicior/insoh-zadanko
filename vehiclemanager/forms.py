@@ -1,5 +1,5 @@
-from django.forms import ModelForm, IntegerField, inlineformset_factory
-from .models import Vehicle, Battery
+from django.forms import ModelForm, IntegerField
+from .models import Vehicle
 
 
 class VehicleForm(ModelForm):
@@ -11,7 +11,6 @@ class VehicleForm(ModelForm):
 
 
 class VehicleEditForm(ModelForm):
-
     class Meta:
         model = Vehicle
         fields = ['name']
